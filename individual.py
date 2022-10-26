@@ -4,22 +4,15 @@
 import sys
 
 
-def add(products):
-    print("сколько добавить товаров?")
-    kol = int(input())
-    k = 0
-    for m in range(kol):
-        k = k + 1
-        name = input("Введите название для " + "{}".format(k) + " товара:  ")
-        shope = input("Введите название магазина:  ")
-        price = int(input("Стоимость товара:  "))
-        product = {
-            'name': name,
-            'price': price,
-            'shope': shope,
-        }
-        products.append(product)
-        products.sort(key=lambda item: item.get('name', ''))
+def get_prod():
+    name = input("Введите название для товара: ")
+    shope = input("Введите название магазина:  ")
+    price = int(input("Стоимость товара:  "))
+    return {
+        'name': name,
+        'price': price,
+        'shope': shope,
+    }
 
 
 def list_1(products):
@@ -87,7 +80,10 @@ def main():
             help_1()
 
         elif command == "add":
-            add(products)
+            product = get_prod()
+
+            products.append(product)
+            products.sort(key=lambda item: item.get('name', ''))
 
         elif command == 'list':
             list_1(products)
