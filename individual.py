@@ -25,7 +25,7 @@ def list_1(products):
     )
     print(line)
     print(
-        '| {:^5} | {:^20} | {:^14} | {:^17} |'.format(
+        '| {:^5} | {:^20} | {:^14.2f} | {:^17} |'.format(
             "№",
             "Название товара",
             "Цена",
@@ -53,7 +53,7 @@ def select(products):
     flag = False
     for product in products:
         if nalich in product['name']:
-            print(f'Товар в наличии: {product["name"]}\nЦена: {product["price"]}\n')
+            print(f'Товар в наличии: {product["name"]}\nЦена: {product["price"]:.2f}\n')
             flag = True
 
     if not flag:
