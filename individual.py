@@ -7,7 +7,7 @@ import sys
 def get_prod():
     name = input("Введите название для товара: ")
     shope = input("Введите название магазина:  ")
-    price = int(input("Стоимость товара:  "))
+    price = float(input("Стоимость товара:  "))
     return {
         'name': name,
         'price': price,
