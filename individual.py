@@ -25,7 +25,7 @@ def list_1(products):
     )
     print(line)
     print(
-        '| {:^5} | {:^20} | {:^14.2f} | {:^17} |'.format(
+        '| {:^5} | {:^20} | {:^14} | {:^17} |'.format(
             "№",
             "Название товара",
             "Цена",
@@ -36,7 +36,7 @@ def list_1(products):
     # Вывести данные о всех товарах.
     for idx, product in enumerate(products, 1):
         print(
-            '| {:>5} | {:<20} | {:<14} | {:>17} |'.format(
+            '| {:>5} | {:<20} | {:<14.2f} | {:>17} |'.format(
                 idx,
                 product.get('name', ''),
                 product.get('price', 0),
